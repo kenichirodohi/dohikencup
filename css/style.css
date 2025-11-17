@@ -1,0 +1,1875 @@
+/* ===================================
+   基本設定
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* カラーパレット */
+    --primary-color: #d32f2f;
+    --primary-dark: #b71c1c;
+    --primary-light: #ff6659;
+    --secondary-color: #1976d2;
+    --accent-color: #ffd700;
+    --dark-bg: #1a1a1a;
+    --dark-gray: #2a2a2a;
+    --light-gray: #f5f5f5;
+    --white: #ffffff;
+    --text-dark: #333333;
+    --text-light: #666666;
+    
+    /* グラデーション */
+    --gradient-primary: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+    --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    --gradient-overlay: linear-gradient(135deg, rgba(211, 47, 47, 0.9) 0%, rgba(183, 28, 28, 0.9) 100%);
+    
+    /* シャドウ */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.2);
+    --shadow-xl: 0 20px 40px rgba(0,0,0,0.3);
+    
+    /* トランジション */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===================================
+   ヒーローセクション
+   =================================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../images/venue-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    overflow: hidden;
+}
+
+@media (min-width: 769px) {
+    .hero {
+        background-attachment: fixed;
+    }
+}
+
+
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(245, 245, 245, 0.9) 100%);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.logo-badge {
+    width: 180px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    animation: float 3s ease-in-out infinite;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.hero-title {
+    font-size: 72px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    letter-spacing: 4px;
+    color: var(--text-dark);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 1s ease;
+}
+
+.hero-subtitle {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 24px;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
+    color: var(--text-light);
+    opacity: 0.9;
+    animation: fadeInDown 1s ease 0.2s both;
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: var(--text-dark);
+    opacity: 0.9;
+    animation: fadeInUp 1s ease 0.4s both;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 18px 50px;
+    background: var(--white);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: var(--shadow-xl);
+    transition: all var(--transition-normal);
+    animation: fadeInUp 1s ease 0.6s both;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    background: var(--accent-color);
+    color: var(--dark-bg);
+}
+
+.cta-button i {
+    margin-right: 10px;
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    }
+}
+
+/* ヒーローデコレーション */
+.hero-decoration {
+    display: none;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ヒーローゲストバッジ */
+.hero-guest-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 215, 0, 0.15);
+    padding: 12px 30px;
+    border-radius: 50px;
+    border: 2px solid var(--accent-color);
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease 0.3s both;
+    backdrop-filter: blur(10px);
+}
+
+.hero-guest-badge i {
+    color: var(--accent-color);
+    font-size: 20px;
+    animation: pulse 2s infinite;
+}
+
+.hero-guest-badge span {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: 1px;
+}
+
+/* ===================================
+   共通セクションスタイル
+   =================================== */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 60px;
+    color: var(--text-dark);
+    position: relative;
+}
+
+.section-title.white {
+    color: var(--white);
+}
+
+.title-decoration {
+    color: var(--primary-color);
+    font-size: 24px;
+    margin: 0 20px;
+}
+
+.section-title.white .title-decoration {
+    color: var(--accent-color);
+}
+
+/* ===================================
+   ゲストセクション
+   =================================== */
+.guest-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    color: var(--white);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.guest-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+    animation: rotate 30s linear infinite;
+}
+
+.guest-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.guest-badge {
+    width: 120px;
+    height: 120px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+    animation: pulse 2s infinite;
+}
+
+.guest-badge i {
+    font-size: 60px;
+    color: var(--dark-bg);
+}
+
+.guest-name {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 25px;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+    text-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+}
+
+.guest-description {
+    font-size: 17px;
+    line-height: 2;
+    color: var(--white);
+    opacity: 1;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.guest-catchphrase {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--accent-color);
+    letter-spacing: 4px;
+    text-shadow: 0 4px 20px rgba(255, 215, 0, 0.5);
+    margin-top: 20px;
+}
+
+.guest-video-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.guest-video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-unmute-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--white);
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 215, 0, 0.5);
+}
+
+.video-unmute-btn:hover {
+    background: rgba(255, 215, 0, 0.9);
+    color: var(--dark-bg);
+    transform: scale(1.05);
+}
+
+.video-unmute-btn.hidden {
+    display: none;
+}
+
+.video-unmute-btn i {
+    font-size: 18px;
+}
+
+.video-unmute-btn span {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* ===================================
+   イベント情報セクション（簡易版）
+   =================================== */
+.event-info-section {
+    background: var(--light-gray);
+    padding: 80px 0;
+}
+
+.event-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background: var(--white);
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    transition: all var(--transition-normal);
+}
+
+.info-card.venue-card {
+    padding: 30px;
+    justify-content: center;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.info-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.info-icon i {
+    font-size: 48px;
+    color: var(--white);
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.info-value {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--text-dark);
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.info-detail {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.venue-image-link {
+    width: 100%;
+    display: block;
+    transition: all var(--transition-normal);
+}
+
+.venue-image-link:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+}
+
+.venue-image-link img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* ===================================
+   特徴セクション
+   =================================== */
+.features-section {
+    background: var(--white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.feature-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    transition: all var(--transition-normal);
+}
+
+.feature-item:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.feature-icon i {
+    font-size: 45px;
+    color: var(--white);
+}
+
+.feature-item h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.feature-item p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+/* ===================================
+   参加資格セクション
+   =================================== */
+.eligibility-section {
+    background: var(--white);
+    padding: 80px 0;
+}
+
+.eligibility-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.eligibility-intro {
+    text-align: center;
+    font-size: 17px;
+    color: var(--text-dark);
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.eligibility-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.eligibility-item {
+    background: var(--light-gray);
+    padding: 30px 35px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    border-left: 5px solid var(--primary-color);
+}
+
+.eligibility-item:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-md);
+}
+
+.eligibility-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.eligibility-icon i {
+    font-size: 32px;
+    color: var(--white);
+}
+
+.eligibility-text {
+    flex: 1;
+}
+
+.eligibility-text h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.eligibility-text p {
+    font-size: 16px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* ===================================
+   マップセクション
+   =================================== */
+.map-section {
+    background: var(--light-gray);
+    padding: 80px 0;
+}
+
+.map-container {
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+}
+
+.venue-info {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.venue-detail {
+    background: var(--light-gray);
+    padding: 25px 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.venue-detail i {
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.venue-detail h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.venue-detail p {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.venue-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 8px 0;
+    font-weight: 600;
+    transition: all var(--transition-normal);
+}
+
+.venue-link:hover {
+    color: var(--primary-dark);
+    gap: 8px;
+}
+
+.venue-link i {
+    font-size: 12px;
+}
+
+.info-address {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-top: 5px;
+}
+
+.event-fee-banner {
+    max-width: 600px;
+    margin: 40px auto 0;
+    background: var(--gradient-primary);
+    padding: 25px 40px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: var(--shadow-lg);
+}
+
+.fee-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.fee-icon i {
+    font-size: 28px;
+    color: var(--white);
+}
+
+.fee-text {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.fee-label {
+    font-size: 16px;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.fee-value {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--accent-color);
+    font-family: 'Bebas Neue', cursive;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.fee-badge {
+    padding: 8px 20px;
+    background: var(--white);
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+/* ===================================
+   エントリーセクション
+   =================================== */
+.entry-section {
+    background: var(--gradient-dark);
+    color: var(--white);
+}
+
+.entry-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.entry-text {
+    font-size: 18px;
+    line-height: 2;
+    margin-bottom: 40px;
+}
+
+.entry-button {
+    display: inline-block;
+    padding: 20px 60px;
+    background: var(--white);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: var(--shadow-xl);
+    transition: all var(--transition-normal);
+}
+
+.entry-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    background: var(--accent-color);
+    color: var(--dark-bg);
+}
+
+.entry-button i {
+    margin-right: 12px;
+    font-size: 22px;
+}
+
+.entry-note {
+    margin-top: 30px;
+    font-size: 14px;
+    opacity: 0.8;
+    line-height: 1.8;
+}
+
+/* ===================================
+   エントリーリストバナー
+   =================================== */
+.entry-list-banner {
+    background: var(--white);
+    padding: 60px 0;
+}
+
+.banner-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--gradient-primary);
+    padding: 40px 50px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-normal);
+}
+
+.banner-content:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.banner-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.banner-icon i {
+    font-size: 40px;
+    color: var(--white);
+}
+
+.banner-text {
+    flex: 1;
+}
+
+.banner-title {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 5px;
+}
+
+.banner-description {
+    font-size: 16px;
+    color: var(--white);
+    opacity: 0.9;
+}
+
+.banner-button {
+    padding: 15px 35px;
+    background: var(--white);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all var(--transition-normal);
+    flex-shrink: 0;
+}
+
+.banner-button:hover {
+    background: var(--accent-color);
+    color: var(--dark-bg);
+    transform: translateX(5px);
+}
+
+.banner-button i {
+    transition: transform var(--transition-normal);
+}
+
+.banner-button:hover i {
+    transform: translateX(5px);
+}
+
+/* ===================================
+   スケジュールセクション
+   =================================== */
+.schedule-section {
+    background: var(--white);
+}
+
+.schedule-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.schedule-timeline::before {
+    content: '';
+    position: absolute;
+    left: 40px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--primary-color);
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.timeline-marker {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--white);
+    flex-shrink: 0;
+    box-shadow: var(--shadow-lg);
+    border: 5px solid var(--white);
+    z-index: 1;
+}
+
+.timeline-content {
+    margin-left: 40px;
+    background: var(--light-gray);
+    padding: 25px 30px;
+    border-radius: 15px;
+    flex-grow: 1;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.timeline-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.timeline-content p {
+    font-size: 16px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* ===================================
+   FAQセクション
+   =================================== */
+.faq-section {
+    background: var(--light-gray);
+}
+
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--white);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+.faq-item:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.faq-question {
+    padding: 25px 30px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: var(--light-gray);
+}
+
+.faq-question i {
+    font-size: 24px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.faq-answer {
+    padding: 25px 30px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-dark);
+    background: var(--white);
+}
+
+/* ===================================
+   エントリープレビューセクション（トップページ用）
+   =================================== */
+.entry-preview-section {
+    background: var(--white);
+    padding: 80px 0;
+}
+
+.entry-preview-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.preview-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.preview-stat {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--light-gray);
+    padding: 25px 35px;
+    border-radius: 15px;
+}
+
+.preview-stat i {
+    font-size: 42px;
+    color: var(--primary-color);
+}
+
+.preview-stat div {
+    text-align: left;
+}
+
+.preview-number {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--primary-color);
+    font-family: 'Bebas Neue', cursive;
+    margin-right: 5px;
+}
+
+.preview-label {
+    font-size: 16px;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.view-list-button {
+    display: inline-block;
+    padding: 18px 50px;
+    background: var(--gradient-primary);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-normal);
+}
+
+.view-list-button:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.view-list-button i {
+    margin-right: 10px;
+}
+
+/* ===================================
+   協賛セクション
+   =================================== */
+.sponsor-section {
+    background: var(--light-gray);
+    padding: 80px 0;
+}
+
+.sponsor-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.sponsor-intro {
+    text-align: center;
+    font-size: 18px;
+    color: var(--text-dark);
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+.sponsor-products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-normal);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.product-image {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background: var(--white);
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all var(--transition-slow);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 30px;
+    text-align: center;
+    background: var(--gradient-primary);
+    color: var(--white);
+}
+
+.product-name {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.product-model {
+    font-size: 16px;
+    opacity: 0.95;
+    font-weight: 500;
+}
+
+.sponsor-logo-container {
+    text-align: center;
+    padding: 40px;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+}
+
+.sponsor-thanks {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.sponsor-name {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--primary-color);
+    letter-spacing: 4px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+/* ===================================
+   お問い合わせセクション
+   =================================== */
+.contact-section {
+    background: var(--white);
+}
+
+.contact-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-text {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: var(--text-dark);
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: var(--light-gray);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+}
+
+.contact-item i {
+    width: 70px;
+    height: 70px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+    flex-shrink: 0;
+}
+
+.contact-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.contact-email {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+}
+
+.contact-email:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.contact-note {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-top: 30px;
+}
+
+/* ===================================
+   フッター
+   =================================== */
+.footer {
+    background: var(--dark-bg);
+    color: var(--white);
+    padding: 50px 0 30px;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.footer-logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.footer-text {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 16px;
+    letter-spacing: 3px;
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+
+.footer-copyright {
+    font-size: 14px;
+    opacity: 0.6;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===================================
+   トップへ戻るボタン
+   =================================== */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    border: none;
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 1000;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* ===================================
+   アニメーション
+   =================================== */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================================
+   レスポンシブデザイン
+   =================================== */
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+        background-size: cover;
+    }
+    
+    .hero-title {
+        font-size: 40px;
+        letter-spacing: 2px;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+    
+    .hero-guest-badge {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .hero-guest-badge span {
+        font-size: 14px;
+    }
+    
+    .hero-description {
+        font-size: 16px;
+    }
+    
+    .guest-name {
+        font-size: 36px;
+    }
+    
+    .guest-description {
+        font-size: 16px;
+    }
+    
+    .guest-catchphrase {
+        font-size: 28px;
+    }
+    
+    .guest-video-container {
+        margin-bottom: 30px;
+    }
+    
+    .video-unmute-btn {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+    
+    .cta-button {
+        padding: 15px 40px;
+        font-size: 16px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+    
+    .title-decoration {
+        font-size: 18px;
+        margin: 0 10px;
+    }
+    
+    .event-info-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .info-card {
+        padding: 35px 30px;
+        gap: 20px;
+    }
+    
+    .info-card.venue-card {
+        padding: 20px;
+    }
+    
+    .info-icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .info-icon i {
+        font-size: 40px;
+    }
+    
+    .info-value {
+        font-size: 26px;
+    }
+    
+    .info-detail {
+        font-size: 16px;
+    }
+    
+    .event-fee-banner {
+        padding: 20px 30px;
+        gap: 15px;
+    }
+    
+    .fee-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .fee-icon i {
+        font-size: 24px;
+    }
+    
+    .fee-value {
+        font-size: 32px;
+    }
+    
+    .fee-badge {
+        font-size: 13px;
+        padding: 6px 16px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .schedule-timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-marker {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+    
+    .timeline-content {
+        margin-left: 30px;
+        padding: 20px;
+    }
+    
+    .preview-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .preview-stat {
+        padding: 20px 30px;
+    }
+    
+    .venue-info {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .venue-detail {
+        padding: 20px 25px;
+    }
+    
+    .map-container {
+        border-radius: 15px;
+    }
+    
+    .contact-item {
+        padding: 25px 30px;
+        gap: 20px;
+    }
+    
+    .contact-email {
+        font-size: 18px;
+    }
+    
+    .scroll-to-top {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 20px;
+    }
+    
+    .sponsor-products {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .product-image {
+        height: 400px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 100vh;
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center center;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .hero-title {
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+    
+    .hero-subtitle {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+    
+    .hero-guest-badge {
+        padding: 8px 16px;
+    }
+    
+    .hero-guest-badge span {
+        font-size: 13px;
+    }
+    
+    .guest-section {
+        padding: 70px 0;
+    }
+    
+    .guest-name {
+        font-size: 28px;
+    }
+    
+    .guest-description {
+        font-size: 16px;
+    }
+    
+    .video-unmute-btn {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px 12px;
+    }
+    
+    .video-unmute-btn span {
+        font-size: 12px;
+    }
+    
+    .guest-badge {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .guest-badge i {
+        font-size: 45px;
+    }
+    
+    .guest-description {
+        font-size: 14px;
+    }
+    
+    .guest-catchphrase {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+    
+    .eligibility-intro {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+    
+    .logo-badge {
+        width: 140px;
+        height: 140px;
+        padding: 15px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .info-card {
+        padding: 30px 20px;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .info-card.venue-card {
+        padding: 15px;
+    }
+    
+    .info-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .info-icon i {
+        font-size: 36px;
+    }
+    
+    .info-value {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    
+    .info-detail {
+        font-size: 14px;
+    }
+    
+    .feature-icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .feature-icon i {
+        font-size: 36px;
+    }
+    
+    .entry-button {
+        padding: 16px 40px;
+        font-size: 18px;
+    }
+    
+    .banner-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 35px 30px;
+        gap: 20px;
+    }
+    
+    .banner-title {
+        font-size: 24px;
+    }
+    
+    .banner-description {
+        font-size: 14px;
+    }
+    
+    .banner-button {
+        padding: 13px 30px;
+        font-size: 16px;
+    }
+    
+    .preview-stat {
+        padding: 18px 25px;
+    }
+    
+    .preview-stat i {
+        font-size: 36px;
+    }
+    
+    .preview-number {
+        font-size: 28px;
+    }
+    
+    .preview-label {
+        font-size: 14px;
+    }
+    
+    .view-list-button {
+        padding: 15px 40px;
+        font-size: 16px;
+    }
+    
+    .banner-content {
+        padding: 25px 20px;
+    }
+    
+    .banner-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .banner-icon i {
+        font-size: 36px;
+    }
+    
+    .banner-title {
+        font-size: 20px;
+    }
+    
+    .banner-button {
+        padding: 12px 25px;
+        font-size: 15px;
+    }
+    
+    .map-container iframe {
+        height: 350px;
+    }
+    
+    .venue-detail {
+        padding: 18px 20px;
+    }
+    
+    .venue-detail i {
+        font-size: 24px;
+    }
+    
+    .venue-detail h4 {
+        font-size: 16px;
+    }
+    
+    .venue-detail p {
+        font-size: 14px;
+    }
+    
+    .eligibility-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 30px;
+    }
+    
+    .eligibility-intro {
+        font-size: 16px;
+    }
+    
+    .eligibility-text h3 {
+        font-size: 18px;
+    }
+    
+    .eligibility-text p {
+        font-size: 15px;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 25px;
+    }
+    
+    .contact-email {
+        font-size: 16px;
+        word-break: break-all;
+    }
+    
+    .eligibility-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .eligibility-icon i {
+        font-size: 28px;
+    }
+    
+    .eligibility-text h3 {
+        font-size: 17px;
+    }
+    
+    .eligibility-text p {
+        font-size: 14px;
+    }
+    
+    .event-fee-banner {
+        flex-direction: column;
+        padding: 20px 25px;
+        gap: 12px;
+    }
+    
+    .fee-text {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .fee-value {
+        font-size: 28px;
+    }
+    
+    .fee-label {
+        font-size: 14px;
+    }
+    
+    .sponsor-products {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .product-image {
+        height: 350px;
+    }
+    
+    .product-name {
+        font-size: 24px;
+    }
+    
+    .product-model {
+        font-size: 14px;
+    }
+    
+    .sponsor-name {
+        font-size: 36px;
+    }
+}
