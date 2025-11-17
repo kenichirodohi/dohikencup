@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>すまいとおかねカップ - ダーツトーナメント</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="container">
+                <div class="logo-badge">
+                    <img src="images/company-logo.png" alt="すまいとおかね" class="logo-image">
+                </div>
+                <h1 class="hero-title">すまいとおかねカップ</h1>
+                <p class="hero-subtitle">SUMAI TO OKANE CUP DARTS TOURNAMENT</p>
+                <div class="hero-guest-badge">
+                    <i class="fas fa-star"></i>
+                    <span>スペシャルゲスト：田口淳之介</span>
+                </div>
+                <p class="hero-description">
+                    第三回すまいとおかねカップ開催
+                </p>
+                <a href="#entry" class="cta-button pulse">
+                    <i class="fas fa-edit"></i> エントリーはこちら
+                </a>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <div class="dart-icon dart-1"><i class="fas fa-bullseye"></i></div>
+            <div class="dart-icon dart-2"><i class="fas fa-bullseye"></i></div>
+            <div class="dart-icon dart-3"><i class="fas fa-bullseye"></i></div>
+        </div>
+    </section>
+
+    <!-- Special Guest Section -->
+    <section class="guest-section">
+        <div class="container">
+            <h2 class="section-title white">
+                <span class="title-decoration">━━</span>
+                スペシャルゲスト
+                <span class="title-decoration">━━</span>
+            </h2>
+            <div class="guest-content">
+                <div class="guest-video-container">
+                    <video id="guestVideo" class="guest-video" autoplay muted playsinline loop>
+                        <source src="https://page.gensparksite.com/get_upload_url/49c99b1b4867b8dbede495c795741a5f3ac6057bef806237dfb142e799b68cfd/default/bf8c9de5-9d25-40d7-afd2-ec9758e1a7b5" type="video/mp4">
+                        お使いのブラウザは動画タグをサポートしていません。
+                    </video>
+                    <div class="video-unmute-btn" id="unmuteBtn">
+                        <i class="fas fa-volume-up"></i>
+                        <span>タップで音声ON</span>
+                    </div>
+                </div>
+                <div class="guest-badge">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3 class="guest-name">田口淳之介</h3>
+                <p class="guest-description">
+                    スペシャルゲストとして、田口淳之介さんが参加決定！
+                </p>
+                <p class="guest-catchphrase">LET'S PLAY DARTS</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Section -->
+    <section class="sponsor-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-decoration">━━</span>
+                協賛企業
+                <span class="title-decoration">━━</span>
+            </h2>
+            <div class="sponsor-content">
+                <div class="sponsor-intro">
+                    本大会はMIRARCH様より、ダーツバレルのご協賛をいただいております。
+                </div>
+                <div class="sponsor-products">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/mirarch-kien.jpg" alt="Kien - 西巻千寿子モデル">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Kien</h3>
+                            <p class="product-model">西巻千寿子モデル</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/mirarch-cloutier.jpg" alt="Cloutier II - GONモデル">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Cloutier II</h3>
+                            <p class="product-model">GONモデル</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sponsor-logo-container">
+                    <p class="sponsor-thanks">Special Thanks to</p>
+                    <div class="sponsor-name">MIRARCH</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Info Section -->
+    <section class="event-info-section">
+        <div class="container">
+            <div class="event-info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3 class="info-label">開催日時</h3>
+                        <p class="info-value">2025/11/23</p>
+                        <p class="info-detail">シングルス 13:00〜（上位8名）</p>
+                        <p class="info-detail">ダブルス 15:00〜</p>
+                    </div>
+                </div>
+
+                <div class="info-card venue-card">
+                    <a href="https://search.dartslive.com/jp/shop/3e4a9b0b1aa3ead40d9b047a20a7ba1e" target="_blank" rel="noopener noreferrer" class="venue-image-link">
+                        <img src="images/venue-info.png" alt="thums up 会場情報">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="event-fee-banner">
+                <div class="fee-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <div class="fee-text">
+                    <span class="fee-label">参加費</span>
+                    <span class="fee-value">無料</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eligibility Section -->
+    <section class="eligibility-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-decoration">━━</span>
+                参加資格
+                <span class="title-decoration">━━</span>
+            </h2>
+            <div class="eligibility-content">
+                <p class="eligibility-intro">以下のいずれかに該当する方が参加いただけます</p>
+                <div class="eligibility-list">
+                    <div class="eligibility-item">
+                        <div class="eligibility-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="eligibility-text">
+                            <h3>保険のお客様</h3>
+                            <p>どひから保険に入っている方</p>
+                        </div>
+                    </div>
+                    <div class="eligibility-item">
+                        <div class="eligibility-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="eligibility-text">
+                            <h3>不動産のお客様</h3>
+                            <p>すまいとおかねから不動産の仲介を受けたことがある方</p>
+                        </div>
+                    </div>
+                    <div class="eligibility-item">
+                        <div class="eligibility-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="eligibility-text">
+                            <h3>招待を受けた方</h3>
+                            <p>どひから招待を受けた方</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-decoration">━━</span>
+                会場アクセス
+                <span class="title-decoration">━━</span>
+            </h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.911947577396!2d139.579439811481!3d35.70378437246564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018ef186f03f0ff%3A0xce077c7a3916c625!2zVGh1bWJzIFVwIOOAnOOCteODoOOCuuOCouODg-ODl-OAnHzlkInnpaXlr7o!5e0!3m2!1sja!2sjp!4v1761549643744!5m2!1sja!2sjp" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="venue-info">
+                <div class="venue-detail">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>THUMS UP 吉祥寺</h4>
+                        <a href="https://search.dartslive.com/jp/shop/3e4a9b0b1aa3ead40d9b047a20a7ba1e" target="_blank" rel="noopener noreferrer" class="venue-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            店舗情報を見る
+                        </a>
+                        <p>東京都武蔵野市吉祥寺本町</p>
+                    </div>
+                </div>
+                <div class="venue-detail">
+                    <i class="fas fa-train"></i>
+                    <div>
+                        <h4>アクセス</h4>
+                        <p>JR中央線・京王井の頭線 吉祥寺駅より徒歩2分</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entry Section -->
+    <section class="entry-section" id="entry">
+        <div class="container">
+            <h2 class="section-title white">
+                <span class="title-decoration">━━</span>
+                エントリー
+                <span class="title-decoration">━━</span>
+            </h2>
+            <div class="entry-content">
+                <p class="entry-text">
+                    参加ご希望の方は、下記のフォームよりお申し込みください。<br>
+                    Googleフォームにて簡単にエントリーいただけます。
+                </p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSewyVkb3Cp0M8y21zr5iibvU-tWNo08SMhPDI5lfT83al2ivw/viewform?usp=publish-editor" class="entry-button" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-google"></i>
+                    Googleフォームでエントリー
+                </a>
+                <p class="entry-note">
+                    ※ Googleフォームが開きます<br>
+                    ※ 定員に達し次第、受付を終了させていただきます
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entry List Link Section -->
+    <section class="entry-list-banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-icon">
+                    <i class="fas fa-list-ul"></i>
+                </div>
+                <div class="banner-text">
+                    <h3 class="banner-title">エントリーリスト</h3>
+                    <p class="banner-description">現在の参加者一覧を確認できます</p>
+                </div>
+                <a href="entry-list.html" class="banner-button">
+                    <span>リストを見る</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-decoration">━━</span>
+                お問い合わせ
+                <span class="title-decoration">━━</span>
+            </h2>
+            <div class="contact-content">
+                <p class="contact-text">
+                    ご不明な点がございましたら、お気軽にお問い合わせください。
+                </p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-detail">
+                            <span class="contact-label">メールでのお問い合わせ</span>
+                            <a href="mailto:info@sumai-okane.com" class="contact-email">info@sumai-okane.com</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/company-logo.png" alt="すまいとおかね" class="footer-logo-img">
+                    <span>すまいとおかねカップ</span>
+                </div>
+                <p class="footer-text">
+                    SUMAI TO OKANE CUP DARTS TOURNAMENT
+                </p>
+                <p class="footer-copyright">
+                    &copy; 2024 すまいとおかねカップ. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
