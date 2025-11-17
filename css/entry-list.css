@@ -1,0 +1,360 @@
+/* ===================================
+   エントリーリストページ専用スタイル
+   =================================== */
+
+/* ページヘッダー */
+.page-header {
+    background: var(--gradient-primary);
+    padding: 20px 0;
+    box-shadow: var(--shadow-lg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.header-logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.header-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all var(--transition-normal);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--white);
+    color: var(--primary-color);
+}
+
+/* ページタイトルセクション */
+.page-title-section {
+    background: var(--gradient-dark);
+    padding: 60px 0;
+    text-align: center;
+    color: var(--white);
+}
+
+.page-title {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.page-title i {
+    color: var(--accent-color);
+}
+
+.page-subtitle {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    letter-spacing: 4px;
+    opacity: 0.8;
+}
+
+/* エントリーリストセクション */
+.entry-list-section {
+    padding: 80px 0;
+    background: var(--light-gray);
+    min-height: 60vh;
+}
+
+.list-category {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 40px;
+}
+
+.category-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 15px;
+}
+
+.category-title i {
+    font-size: 28px;
+}
+
+.entry-stats {
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: var(--text-dark);
+}
+
+.stat-label {
+    font-weight: 600;
+}
+
+.stat-value {
+    font-weight: 900;
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+/* エントリーテーブル */
+.entry-table-container {
+    overflow-x: auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+}
+
+.entry-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+}
+
+.entry-table thead {
+    background: var(--gradient-primary);
+    color: var(--white);
+}
+
+.entry-table th {
+    padding: 20px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: var(--white);
+}
+
+.entry-table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    transition: all var(--transition-normal);
+}
+
+.entry-table tbody tr:hover {
+    background: #f9f9f9;
+    transform: scale(1.01);
+}
+
+.entry-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.entry-table td {
+    padding: 18px 20px;
+    font-size: 16px;
+    color: var(--text-dark);
+}
+
+.col-number {
+    width: 80px;
+    text-align: center;
+    font-weight: 900;
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+.col-name {
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.col-note {
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 17px;
+}
+
+/* 戻るボタン */
+.back-button-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.back-to-home-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 40px;
+    background: var(--gradient-primary);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-normal);
+}
+
+.back-to-home-button:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* フッターリンク */
+.footer-links {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    opacity: 0.8;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+.footer-links span {
+    color: var(--white);
+    opacity: 0.5;
+}
+
+/* ===================================
+   レスポンシブデザイン
+   =================================== */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header-nav {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .page-title {
+        font-size: 32px;
+        gap: 10px;
+    }
+
+    .page-subtitle {
+        font-size: 16px;
+    }
+
+    .list-category {
+        padding: 25px 20px;
+    }
+
+    .category-title {
+        font-size: 24px;
+        gap: 10px;
+    }
+
+    .entry-table th,
+    .entry-table td {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    .col-number {
+        width: 50px;
+        font-size: 16px;
+    }
+
+    .col-name {
+        font-size: 15px;
+    }
+
+    .col-note {
+        font-size: 15px;
+    }
+
+    .back-to-home-button {
+        padding: 15px 30px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 24px;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .page-title i {
+        font-size: 32px;
+    }
+
+    .list-category {
+        padding: 20px 15px;
+    }
+
+    .category-title {
+        font-size: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .entry-stats {
+        font-size: 16px;
+    }
+
+    .stat-value {
+        font-size: 20px;
+    }
+
+    .entry-table th,
+    .entry-table td {
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+
+    .col-number {
+        width: 40px;
+        font-size: 14px;
+    }
+
+    .col-name {
+        font-size: 14px;
+    }
+
+    .col-note {
+        font-size: 14px;
+    }
+}
